@@ -51,3 +51,20 @@ for $peptide (@all_digested_peptides) {
 }
 
 # NOTE - the FASTA format must have unique identifiers
+
+# ION STATS
+#####################################################################################################
+#!/usr/bin/perl -w
+use strict;
+use Getopt::Long;
+print "Please enter criteria for bin width\n";
+my $data = "data_file";
+my $binwidth = <>;
+print "Please enter criteria for bin target\n";
+my $bintarget = <>;
+GetOptions ("length=i" => \$binwidth,
+        "file=s" => \$data,
+        "binlength" => \$bintarget)
+or die("Error, you're stupid\n");
+exit;
+#####################################################################################################
